@@ -6,6 +6,7 @@ void main()
     DDRB = 0b11111111;
     while(1)
     {
-        seven_segment(i);
+        PORTB = seven_segment(i);
+        _delay_ms(1000);
     }
 }
