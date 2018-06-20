@@ -1,0 +1,21 @@
+It is a return type function. Just call the function, and it will return the value of the pressed key.
+Example is shown below:
+
+//this example also uses the lcd library to show the pressed key on the LCD.
+#define ROW_PORT PORTD  //any port can be used, but should be connected to the row
+#define COL_PORT PINC   //any port can be used, but should be connected to the coloumn
+#include<mylibrary/keypad.h>
+void main()
+{
+	DDRA = 0b11111111;
+	DDRC = 0b11110000;
+	PORTC = 0b00001111;
+	DDRD = 0b11111111;
+	lcd_setup();
+	lcd_address(0x80);
+	while(1)
+	{
+        lcd_data(keypad());
+	}
+	
+}
