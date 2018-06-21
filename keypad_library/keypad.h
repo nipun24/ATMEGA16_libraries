@@ -88,7 +88,7 @@ unsigned char keypad()
 		else if((COL_PORT & 0b00001000)==0)
         {
             while(!(COL_PORT & 0b00001000));
-            return 43;	//ASCII value for addition symbol
+            return '+';
         }
     }	
 }
