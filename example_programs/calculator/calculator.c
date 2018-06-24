@@ -11,8 +11,8 @@
 int num1=0,num2=0;
 unsigned char x,op,set1=0,set2=0,del=0,c=0x80;
 
-//delete funtion for number
-void delete_num()
+//delete funtion
+void delete_fn()
 {
 	lcd_address(0x04);
 	c--;
@@ -20,17 +20,6 @@ void delete_num()
 	lcd_data(' ');
 	lcd_address(0x06);
 	lcd_address(c);			
-}
-
-//delete function for sign
-void delete_sign()
-{
-	lcd_address(0x04);
-	c--;
-	lcd_address(c);
-	lcd_data(' ');
-	lcd_address(0x06);
-	lcd_address(c);	
 }
 
 void main()
@@ -57,7 +46,7 @@ void main()
 			else if(x=='D')	//if user presses delete
 			{
 				num1=num1/10;
-				delete_num();				
+				delete_fn();				
 			}
 			else if(x=='+' | x=='-' | x=='*' | x=='/')
 			{
@@ -81,12 +70,7 @@ void main()
 			//if user presses delete button after the operator/sign
 			if(x=='D' && num2==0)
 			{
-				lcd_address(0x04);
-				c--;
-				lcd_address(c);
-				lcd_data(' ');
-				lcd_address(0x06);
-				lcd_address(c);
+				delete_fn();
 				set1=0;
 				goto start;
 			}			
@@ -106,7 +90,7 @@ void main()
 			else if(x=='D')
 			{
 				num2=num2/10;
-				delete_num();
+				delete_fn();
 			}
 			else
 			{
