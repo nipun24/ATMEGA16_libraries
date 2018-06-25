@@ -1,7 +1,7 @@
 /*
-include all header files from the other folder
+include all header files from the header files folder
 	1. lcd_library
-	2.keypad_library
+	2. keypad_library
 */
 #include<avr/io.h>
 #define F_CPU 16000000UL
