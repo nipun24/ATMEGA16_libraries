@@ -5,6 +5,7 @@ There are two functions in the library.
 
 ### Example
 ```c
+//This example uses the LCD Library to display the output on the LCD display.
 void main()
 {
 	DDRA = 0b00000000;
