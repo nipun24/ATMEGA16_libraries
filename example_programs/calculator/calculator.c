@@ -1,3 +1,8 @@
+/*
+include all header files from the other folder
+	1. lcd_library
+	2.keypad_library
+*/
 #include<avr/io.h>
 #define F_CPU 16000000UL
 #include<util/delay.h>
