@@ -3,8 +3,8 @@ There are two functions in the library.
 1. `adc_setup()` : Initialises the ADC for conversion. Must be called before any conversion tasks.
 2. `adc_value(argument)` : This function returns the ADC value of the analog signal from the `argument` channel.
 
-###example
-````
+### example
+```
 void main()
 {
 	DDRA = 0b00000000;
@@ -21,4 +21,4 @@ void main()
 		_delay_ms(500);
     }
 }
-````
+```
