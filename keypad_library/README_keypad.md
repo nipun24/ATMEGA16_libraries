@@ -1,6 +1,9 @@
-It is a return type function. Just call the function, and it will return the value of the pressed key.
-Example is shown below:
-
+# Keypad Library
+This is a return type function. Call `keypad()`, and it will return the value of the pressed key.
+**NOTE**
+The `keypad_calc()` function is specifically made for the [calculator program](https://github.com/nipun24/ATMEGA16_libraries/blob/master/example_programs/calculator/calculator.c).
+### Example
+```c
 //this example also uses the lcd library to show the pressed key on the LCD.
 #define ROW_PORT PORTD  //any port can be used, but should be connected to the row
 #define COL_PORT PINC   //any port can be used, but should be connected to the coloumn
@@ -19,3 +22,4 @@ void main()
 	}
 	
 }
+```
