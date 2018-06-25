@@ -4,7 +4,7 @@ There are two functions in the library.
 2. `adc_value(argument)` : This function returns the ADC value of the analog signal from the `argument` channel.
 
 ### Example
-```
+```c
 void main()
 {
 	DDRA = 0b00000000;
