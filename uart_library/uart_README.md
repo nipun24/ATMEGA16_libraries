@@ -11,7 +11,7 @@ The following example displays the data received on the LCD.
 #define UBRR_VALUE ((F_CPU/(16UL*BAUD_RATE))-1)
 #include <uart.h>
 
-int main(void)
+void main()
 {
 	DDRA = 0xff;
 	lcd_setup();
