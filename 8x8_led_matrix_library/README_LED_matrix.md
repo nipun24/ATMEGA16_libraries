@@ -2,7 +2,7 @@
 
 1. `#define` ROW_PORT and COL_PORT as output ports.
 2. Call the alphabet you want to display in **CAPS**.
-3. Pass argument `0` (for non scrolling) or `1` (for scrolling text).  
+3. Pass argument `0` (for non scrolling text) or `1` (for scrolling text).  
 ### Example
 ```c
 #include <avr/io.h>
@@ -18,8 +18,8 @@ void main()
 	DDRB = 0xff;
 	while(1)
 	{
-		A(0);
-		B(1);
+		A(0);	//non scrolling text
+		B(1);	//scrolling text
 	}
 }
 ```
