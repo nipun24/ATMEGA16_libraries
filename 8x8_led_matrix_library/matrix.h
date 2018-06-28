@@ -1,418 +1,169 @@
 //library for 8x8 led matrix to display all letters
 unsigned char row[8] = {0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80};
-void A()
+void out_loop(unsigned char col[],int c)
+{
+	if (c == 0)
+	{
+		for(int i=0;i<500;i++)
+		{
+			for(int j=0;j<8;j++)
+			{
+				ROW_PORT = row[j];
+				COL_PORT = col[j];
+				_delay_ms(1);
+			}
+		}
+		ROW_PORT = 0b00000000;
+		COL_PORT = 0b11111111;
+		_delay_ms(200);
+	} 
+	else if (c == 1)
+	{
+		for(int k=0;k<8;k++)
+		{
+			for(int i=0;i<50;i++)
+			{
+				for(int j=0;j<8;j++)
+				{
+					PORTA = row[j];
+					PORTB = ~((~(col[j]))>>k);
+					PORTB|= ~(255>>k);
+					_delay_ms(1);
+				}
+			}
+		}
+		PORTA = 0b00000000;
+		PORTB = 0b11111111;
+		_delay_ms(200);
+	}
+}
+void A(int c)
 {
 	unsigned char clm[8] = {0xbd,0xbd,0xbd,0x81,0xbd,0xbd,0xdb,0xe7};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void B()
+void B(int c)
 {
 	unsigned char clm[8] = {0x87,0xbb,0xbb,0xbb,0x87,0xbb,0xbb,0x87};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void C()
+void C(int c)
 {
 	unsigned char clm[8] = {0xe1,0xdf,0xbf,0xbf,0xbf,0xbf,0xdf,0xe1};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void D()
+void D(int c)
 {
 	unsigned char clm[8] = {0x87,0xbb,0xbd,0xbd,0xbd,0xbd,0xbb,0x87};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void E()
+void E(int c)
 {
 	unsigned char clm[8] = {0x81,0xbf,0xbf,0xbf,0x87,0xbf,0xbf,0x81};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void F()
+void F(int c)
 {
 	unsigned char clm[8] = {0xbf,0xbf,0xbf,0xbf,0x87,0xbf,0xbf,0x81};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void G()
+void G(int c)
 {
 	unsigned char clm[8] = {0xe1,0xdd,0xbd,0xa1,0xbf,0xbf,0xdf,0xe1};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void H()
+void H(int c)
 {
 	unsigned char clm[8] = {0xbd,0xbd,0xbd,0xbd,0x81,0xbd,0xbd,0xbd};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void I()
+void I(int c)
 {
 	unsigned char clm[8] = {0x81,0xe7,0xe7,0xe7,0xe7,0xe7,0xe7,0x81};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void J()
+void J(int c)
 {
 	unsigned char clm[8] = {0xf7,0xeb,0xdb,0xfb,0xfb,0xfb,0xfb,0xc1};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void K()
+void K(int c)
 {
 	unsigned char clm[8] = {0xdd,0xdb,0xd7,0xcf,0xcf,0xd7,0xdb,0xdd};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void L()
+void L(int c)
 {
 	unsigned char clm[8] = {0xc3,0xdf,0xdf,0xdf,0xdf,0xdf,0xdf,0xdf};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void M()
+void M(int c)
 {
 	unsigned char clm[8] = {0xbd,0xbd,0xbd,0xbd,0xbd,0xa5,0x99,0xbd};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void N()
+void N(int c)
 {
 	unsigned char clm[8] = {0x7e,0x7c,0x7a,0x76,0x6e,0x5e,0x3e,0x7e};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void O()
+void O(int c)
 {
 	unsigned char clm[8] = {0xe7,0xdb,0xbd,0xbd,0xbd,0xbd,0xdb,0xe7};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void P()
+void P(int c)
 {
 	unsigned char clm[8] = {0xbf,0xbf,0xbf,0x87,0xbb,0xbb,0xbb,0x87};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void Q()
+void Q(int c)
 {
 	unsigned char clm[8] = {0xe4,0xdb,0xb5,0xbd,0xbd,0xbd,0xdb,0xe7};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void R()
+void R(int c)
 {
 	unsigned char clm[8] = {0xbb,0xb7,0xaf,0x87,0xbb,0xbb,0xbb,0x87};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void S()
+void S(int c)
 {
 	unsigned char clm[8] = {0x87,0xfb,0xfb,0xfb,0xc7,0xbf,0xbf,0xc7};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void T()
+void T(int c)
 {
 	unsigned char clm[8] = {0xe7,0xe7,0xe7,0xe7,0xe7,0xe7,0xe7,0x81};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void U()
+void U(int c)
 {
 	unsigned char clm[8] = {0xe7,0xdb,0xbd,0xbd,0xbd,0xbd,0xbd,0xbd};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void V()
+void V(int c)
 {
 	unsigned char clm[8] = {0xbf,0x9f,0xaf,0xb7,0xbb,0xbd,0xbd,0xbd};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void W()
+void W(int c)
 {
 	unsigned char clm[8] = {0xbd,0x99,0xa5,0xbd,0xbd,0xbd,0xbd,0xbd};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void X()
+void X(int c)
 {
 	unsigned char clm[8] = {0x7e,0xbd,0xdb,0xe7,0xe7,0xdb,0xbd,0x7e};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void Y()
+void Y(int c)
 {
 	unsigned char clm[8] = {0xe7,0xe7,0xe7,0xe7,0xe7,0xdb,0xbd,0x7e};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
-void Z()
+void Z(int c)
 {
 	unsigned char clm[8] = {0x00,0xbf,0xdf,0xef,0xf7,0xfb,0xfd,0x00};
-	for(int i=0;i<500;i++)
-	{
-		for(int j=0;j<8;j++)
-		{
-			PORTA = row[j];
-			PORTB = clm[j];
-			_delay_ms(1);
-		}
-	}
-	PORTA = 0b00000000;
-	PORTB = 0b11111111;
-	_delay_ms(200);
+	out_loop(clm,c);
 }
