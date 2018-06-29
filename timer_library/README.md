@@ -20,7 +20,7 @@ void main()
     }
 }
 ```
-##CTC Mode
+## CTC Mode
 **Example:**
 ```c
 void main()
@@ -36,7 +36,7 @@ void main()
 	}
 }
 ```
-##PWM Mode
+## PWM Mode
 **Example:**
 ```c
 void main()
