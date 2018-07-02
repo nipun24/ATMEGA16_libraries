@@ -24,3 +24,13 @@ unsigned char uart_rec()
 	while(!(UCSRA & (1<<RXC)));
 	return UDR;
 }
+
+void uart_string_send(unsigned char *str)
+{
+	int i=0;
+	while(str[i]!='\0')
+	{
+		uart_send(str[i]);
+		i++;
+	}
+}
